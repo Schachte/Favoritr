@@ -12,7 +12,15 @@ class newlist(models.Model):
 	slug = AutoSlugField(populate_from='list_name', default = '')
 	class Meta:
 		unique_together=('user','list_name')
+<<<<<<< HEAD
 
+=======
+		error_messages = {
+			NON_FIELD_ERRORS: {
+				'unique_together': "s's are not unique.",
+			}
+		}
+>>>>>>> ed78a14ef7596ba3f0ade075f760d5b486bdc2f8
 
 	def __str__(self):
 		return self.list_name

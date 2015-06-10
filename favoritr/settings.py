@@ -12,12 +12,18 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+<<<<<<< HEAD
 import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #favoritrappguy
 # favoritrapp@gmail.com
+=======
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+>>>>>>> ed78a14ef7596ba3f0ade075f760d5b486bdc2f8
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -26,9 +32,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wrs+eb5!%fr#t&is4e@^7s($#m#dpfvpy-4$8w&+j5omp(=^d%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+<<<<<<< HEAD
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+=======
+DEBUG = True
+
+ALLOWED_HOSTS = []
+>>>>>>> ed78a14ef7596ba3f0ade075f760d5b486bdc2f8
 
 
 # Application definition
@@ -80,6 +92,7 @@ WSGI_APPLICATION = 'favoritr.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+<<<<<<< HEAD
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -96,6 +109,15 @@ DATABASES = {
 
 
 
+=======
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+>>>>>>> ed78a14ef7596ba3f0ade075f760d5b486bdc2f8
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
