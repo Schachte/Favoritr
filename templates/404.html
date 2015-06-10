@@ -1,0 +1,89 @@
+
+<!--LOADING STATIC FILES TO USE SITE ASSETS-->
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content %}
+    <!-- Fixed navbar -->
+    <!-- Fixed navbar -->
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">FAVORITR.</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+          <ul class="nav navbar-nav">
+          <li><a href="/">HOME</a></li>
+          {% if user.is_authenticated %}
+          {% else %}
+            <li><a href="/login">LOGIN</a></li>
+            <li class="active"><a href="/register">REGISTER</a></li>
+          {% endif %}
+            {% if user.is_authenticated %}
+            <li><a href="/user/{{user.username}}/profile">PROFILE</a></li>
+            <li><a href="/logout">LOGOUT</a></li>
+            {% endif %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+	<!-- *****************************************************************************************************************
+	 HEADERWRAP
+	 ***************************************************************************************************************** -->
+	<div id="headerwrap">
+	    <div class="contaidner">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+
+					<center><h1><span class = "notfound404">404 - THIS LIST DOESN'T EXIST</span></h1></center>
+
+
+					{% if user.is_authenticated %}
+						<center><h3><span class = "notfound404">SORRY,  {{ user.username|upper }}</span></h3></center>
+					{% endif %}
+				</div>
+
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /headerwrap -->
+
+	
+
+	<!-- *****************************************************************************************************************
+	 FOOTER
+	 ***************************************************************************************************************** -->
+	 <div id="footerwrap">
+	 	<div class="container">
+		 	<div class="row">
+		 		<div class="col-lg-8">
+		 			<h4>About</h4>
+		 			<div class="hline-w"></div>
+		 			<p>Favoritr was designed as a learning tool for the Django and Python web framework. This was designed and created by Ryan Schachte, a college kid with a passion for technology. The app encompasses the idea of never forgetting anything. Make lists for movies you want to see, songs you want to download or recipes you'd like to stow away for a date. Favoritr embeds this simple idea into a beautifully designed web and mobile application. </p>
+		 		</div>
+		 		
+		 		<div class="col-lg-4">
+		 			<h4>My Bedroom</h4>
+		 			<div class="hline-w"></div>
+		 			<p>
+		 				1115 E Lemon St,<br/>
+		 				85281, Arizona,<br/>
+		 				United States.<br/>
+		 			</p>
+		 		</div>
+		 	
+		 	</div><! --/row -->
+	 	</div><! --/container -->
+	 </div><! --/footerwrap -->
+
+
+{% endblock %}
